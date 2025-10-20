@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>दिवाली की शुभकामनाएं</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #0c2461, #1e3799, #4a69bd);
+            color: #fff;
+            min-height: 100vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 400px;
+            height: 85vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            position: relative;
+        }
+        
+        header {
+            text-align: center;
+            padding: 10px 0;
+            width: 100%;
+        }
+        
+        .main-title {
+            font-size: 2.5rem;
+            margin-bottom: 5px;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
+            color: #ffd700;
+            animation: glow 2s ease-in-out infinite alternate;
+            transform-style: preserve-3d;
+            transform: perspective(500px) rotateX(10deg);
+        }
+        
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
+            }
+            to {
+                text-shadow: 0 0 20px rgba(255, 215, 0, 0.9), 0 0 30px rgba(255, 140, 0, 0.6);
+            }
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: #ffd700;
+            margin-bottom: 10px;
+            transform-style: preserve-3d;
+            transform: perspective(300px) rotateX(5deg);
+        }
+        
+        .content-area {
+            width: 100%;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .diya-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            perspective: 1000px;
+            margin: 10px 0;
+        }
+        
+        .diya {
+            width: 100px;
+            height: 100px;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .diya-base {
+            width: 100%;
+            height: 50px;
+            background: linear-gradient(to right, #e67e22, #d35400);
+            border-radius: 50% 50% 40% 40%;
+            position: absolute;
+            bottom: 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .flame {
+            width: 25px;
+            height: 50px;
+            background: linear-gradient(to top, rgba(255, 255, 255, 0) 0%, #ffd700 30%, #ff8c00 70%, #ff4500 100%);
+            border-radius: 50% 50% 20% 20%;
+            position: absolute;
+            top: -35px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: flicker 1.5s ease-in-out infinite alternate;
+            box-shadow: 0 0 20px #ff8c00, 0 0 40px #ff4500;
+        }
+        
+        .input-section {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            width: 100%;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            margin: 10px 0;
+        }
+        
+        .input-group {
+            margin-bottom: 15px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+            color: #ffd700;
+            font-weight: bold;
+        }
+        
+        input {
+            width: 100%;
+            padding: 12px 15px;
+            border-radius: 10px;
+            border: none;
+            background: rgba(255, 255, 255, 0.95);
+            font-size: 1rem;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            font-weight: bold;
+            color: #333;
+        }
+        
+        button {
+            background: linear-gradient(to right, #e67e22, #d35400);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin: 8px auto;
+            width: 100%;
+        }
+        
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+        }
+        
+        .message-box {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            width: 100%;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            margin: 10px 0;
+            display: none;
+        }
+        
+        .wish-title {
+            font-size: 1.5rem;
+            color: #ffd700;
+            margin-bottom: 15px;
+            text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+            transform-style: preserve-3d;
+            transform: perspective(400px) rotateY(5deg);
+        }
+        
+        .message {
+            font-size: 1.2rem;
+            line-height: 1.5;
+            color: #fff;
+            text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        
+        .share-link {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 10px 12px;
+            border-radius: 8px;
+            margin: 12px 0;
+            word-break: break-all;
+            font-size: 0.85rem;
+            color: #333;
+            font-weight: bold;
+            border: 2px dashed #e67e22;
+        }
+        
+        .ad-container {
+            width: 100%;
+            margin: 10px 0;
+        }
+        
+        .ad {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 12px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px dashed rgba(255, 255, 255, 0.3);
+            flex-direction: column;
+            height: 70px;
+        }
+        
+        .ad-text {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        .ad-code {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 5px 8px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 0.75rem;
+            color: #ffd700;
+        }
+        
+        .lanterns {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin: 15px 0;
+        }
+        
+        .lantern {
+            width: 35px;
+            height: 50px;
+            background: linear-gradient(to bottom, #e74c3c, #c0392b);
+            border-radius: 15px 15px 8px 8px;
+            position: relative;
+            animation: swing 4s ease-in-out infinite;
+            transform-style: preserve-3d;
+            transform: perspective(200px) rotateY(5deg);
+        }
+        
+        .lantern:nth-child(2) {
+            animation-delay: 0.5s;
+            background: linear-gradient(to bottom, #f39c12, #e67e22);
+        }
+        
+        .lantern:nth-child(3) {
+            animation-delay: 1s;
+            background: linear-gradient(to bottom, #2ecc71, #27ae60);
+        }
+        
+        .lantern:nth-child(4) {
+            animation-delay: 1.5s;
+            background: linear-gradient(to bottom, #9b59b6, #8e44ad);
+        }
+        
+        .lantern::before {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 8px;
+            background: #f1c40f;
+            top: -4px;
+            left: -2px;
+            border-radius: 8px;
+        }
+        
+        .lantern::after {
+            content: '';
+            position: absolute;
+            width: 8px;
+            height: 12px;
+            background: #f1c40f;
+            bottom: -12px;
+            left: 13px;
+            border-radius: 0 0 4px 4px;
+        }
+        
+        .fireworks {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .firework {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            animation: explode 2s ease-out forwards;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 10px;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.7);
+            width: 100%;
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotateY(0deg);
+            }
+            50% {
+                transform: translateY(-15px) rotateY(10deg);
+            }
+        }
+        
+        @keyframes flicker {
+            0%, 100% {
+                transform: translateX(-50%) scaleY(1);
+                opacity: 1;
+            }
+            50% {
+                transform: translateX(-50%) scaleY(1.1) translateX(2px);
+                opacity: 0.9;
+            }
+        }
+        
+        @keyframes swing {
+            0%, 100% {
+                transform: perspective(200px) rotateY(5deg) rotate(-5deg);
+            }
+            50% {
+                transform: perspective(200px) rotateY(5deg) rotate(5deg);
+            }
+        }
+        
+        @keyframes explode {
+            0% {
+                transform: translate(0, 0);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(var(--tx), var(--ty));
+                opacity: 0;
+            }
+        }
+        
+        .social-share {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 12px;
+        }
+        
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .social-icon:hover {
+            transform: scale(1.1);
+            background: rgba(255, 255, 255, 0.3);
+        }
+        
+        /* 3D Text Effects */
+        .text-3d {
+            text-shadow: 
+                0 1px 0 #ccc, 
+                0 2px 0 #c9c9c9,
+                0 3px 0 #bbb,
+                0 4px 0 #b9b9b9,
+                0 5px 0 #aaa,
+                0 6px 1px rgba(0,0,0,.1),
+                0 0 5px rgba(0,0,0,.1),
+                0 1px 3px rgba(0,0,0,.3),
+                0 3px 5px rgba(0,0,0,.2),
+                0 5px 10px rgba(0,0,0,.25),
+                0 10px 10px rgba(0,0,0,.2),
+                0 20px 20px rgba(0,0,0,.15);
+        }
+        
+        .floating-text {
+            position: absolute;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #ffd700;
+            text-shadow: 0 0 8px rgba(255, 215, 0, 0.7);
+            z-index: 1;
+            pointer-events: none;
+            white-space: nowrap;
+            transform-style: preserve-3d;
+        }
+        
+        .text-hindi {
+            font-family: 'Arial', sans-serif;
+            color: #ff6b6b;
+        }
+        
+        .text-english {
+            color: #ffd700;
+        }
+        
+        /* Animation for floating texts */
+        @keyframes floatText1 {
+            0% {
+                transform: translate(0, 0) rotateY(0deg) perspective(300px);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translate(80px, 300px) rotateY(180deg) perspective(300px);
+                opacity: 0;
+            }
+        }
+        
+        @keyframes floatText2 {
+            0% {
+                transform: translate(0, 0) rotateX(0deg) perspective(300px);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translate(-120px, 200px) rotateX(180deg) perspective(300px);
+                opacity: 0;
+            }
+        }
+        
+        @keyframes floatText3 {
+            0% {
+                transform: translate(0, 0) rotateY(0deg) perspective(300px);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translate(100px, -150px) rotateY(-180deg) perspective(300px);
+                opacity: 0;
+            }
+        }
+        
+        @keyframes floatText4 {
+            0% {
+                transform: translate(0, 0) rotateX(0deg) perspective(300px);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translate(-100px, -200px) rotateX(-180deg) perspective(300px);
+                opacity: 0;
+            }
+        }
+        
+        /* No scroll */
+        html, body {
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="fireworks" id="fireworks"></div>
+    
+    <!-- Floating Diwali Texts -->
+    <div class="floating-text text-hindi" id="text1">दीपावली की शुभकामनाएं</div>
+    <div class="floating-text text-english" id="text2">Happy Diwali</div>
+    <div class="floating-text text-hindi" id="text3">शुभ दीपावली</div>
+    <div class="floating-text text-english" id="text4">Festival of Lights</div>
+    
+    <div class="container">
+        <header>
+            <h1 class="main-title text-3d">Happy Diwali</h1>
+            <div class="subtitle">दीपों का त्योहार</div>
+        </header>
+        
+        <div class="content-area">
+            <div class="diya-container">
+                <div class="diya">
+                    <div class="diya-base"></div>
+                    <div class="flame"></div>
+                </div>
+            </div>
+            
+            <div class="input-section" id="inputSection">
+                <div class="input-group">
+                    <label for="userName">अपना नाम दर्ज करें:</label>
+                    <input type="text" id="userName" placeholder="आपका नाम">
+                </div>
+                <button id="generateBtn">
+                    <i class="fas fa-magic"></i> शुभकामना जनरेट करें
+                </button>
+            </div>
+            
+            <div class="message-box" id="messageBox">
+                <div class="wish-title text-3d">दिवाली की शुभकामनाएं!</div>
+                <div class="message" id="wishMessage">
+                    <!-- Dynamic message will appear here -->
+                </div>
+                <div class="share-link" id="shareLink">
+                    <!-- Share link will appear here -->
+                </div>
+                <button id="copyBtn">
+                    <i class="fas fa-copy"></i> लिंक कॉपी करें
+                </button>
+                <div class="social-share">
+                    <a href="#" class="social-icon" id="whatsappShare">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="#" class="social-icon" id="facebookShare">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-icon" id="twitterShare">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="ad-container">
+                <div class="ad">
+                    <div class="ad-text">विज्ञापन स्थान</div>
+                    <div class="ad-code">AdMob ID: ca-app-pub-3940256099942544/6300978111</div>
+                </div>
+            </div>
+            
+            <div class="lanterns">
+                <div class="lantern"></div>
+                <div class="lantern"></div>
+                <div class="lantern"></div>
+                <div class="lantern"></div>
+            </div>
+        </div>
+        
+        <footer>
+            आपको और आपके परिवार को दिवाली की हार्दिक शुभकामनाएं!
+        </footer>
+    </div>
+
+    <script>
+        // DOM Elements
+        const userNameInput = document.getElementById('userName');
+        const generateBtn = document.getElementById('generateBtn');
+        const inputSection = document.getElementById('inputSection');
+        const messageBox = document.getElementById('messageBox');
+        const wishMessage = document.getElementById('wishMessage');
+        const shareLink = document.getElementById('shareLink');
+        const copyBtn = document.getElementById('copyBtn');
+        const whatsappShare = document.getElementById('whatsappShare');
+        const facebookShare = document.getElementById('facebookShare');
+        const twitterShare = document.getElementById('twitterShare');
+        const adContainer = document.querySelector('.ad-container');
+        
+        // Generate Wish Function
+        generateBtn.addEventListener('click', function() {
+            const userName = userNameInput.value.trim();
+            
+            if (userName === '') {
+                alert('कृपया अपना नाम दर्ज करें!');
+                return;
+            }
+            
+            // Create personalized message
+            wishMessage.innerHTML = `
+                <strong>${userName}</strong>,<br><br>
+                आपको दिवाली की हार्दिक शुभकामनाएं!<br>
+                आपका जीवन प्रकाश और खुशियों से भरा रहे!<br><br>
+                यह दिवाली आपके लिए खुशहाली,<br>
+                समृद्धि और सफलता लेकर आए।
+            `;
+            
+            // Generate shareable link
+            const baseUrl = window.location.href.split('?')[0];
+            const shareUrl = `${baseUrl}?name=${encodeURIComponent(userName)}`;
+            shareLink.textContent = shareUrl;
+            
+            // Show message box and hide input section
+            inputSection.style.display = 'none';
+            messageBox.style.display = 'block';
+            
+            // Update ads after generating wish
+            updateAds();
+            
+            // Create more fireworks for celebration
+            for(let i = 0; i < 10; i++) {
+                setTimeout(createFirework, i * 200);
+            }
+        });
+        
+        // Update Ads Function
+        function updateAds() {
+            adContainer.innerHTML = `
+                <div class="ad">
+                    <div class="ad-text">विशेष दिवाली ऑफर!</div>
+                    <div class="ad-code">AdMob ID: ca-app-pub-3940256099942544/6300978111</div>
+                    <div style="margin-top: 5px; font-size: 0.7rem; color: #ffd700; font-weight: bold;">दिवाली पर 50% छूट - अभी खरीदें!</div>
+                </div>
+            `;
+        }
+        
+        // Copy Link Function
+        copyBtn.addEventListener('click', function() {
+            const textArea = document.createElement('textarea');
+            textArea.value = shareLink.textContent;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+            
+            // Show confirmation
+            const originalText = copyBtn.innerHTML;
+            copyBtn.innerHTML = '<i class="fas fa-check"></i> कॉपी हो गया!';
+            setTimeout(() => {
+                copyBtn.innerHTML = originalText;
+            }, 2000);
+        });
+        
+        // Social Share Functions
+        whatsappShare.addEventListener('click', function(e) {
+            e.preventDefault();
+            const text = `मेरी दिवाली शुभकामना देखें: ${shareLink.textContent}`;
+            window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank');
+        });
+        
+        facebookShare.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareLink.textContent)}`, '_blank');
+        });
+        
+        twitterShare.addEventListener('click', function(e) {
+            e.preventDefault();
+            const text = `मेरी दिवाली शुभकामना देखें!`;
+            window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(shareLink.textContent)}`, '_blank');
+        });
+        
+        // Check if name parameter exists in URL
+        function checkUrlParams() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const name = urlParams.get('name');
+            
+            if (name) {
+                userNameInput.value = name;
+                generateBtn.click();
+            }
+        }
+        
+        // Initialize
+        checkUrlParams();
+        
+        // Fireworks effect
+        function createFirework() {
+            const fireworksContainer = document.getElementById('fireworks');
+            const firework = document.createElement('div');
+            firework.className = 'firework';
+            
+            // Random position
+            const x = Math.random() * window.innerWidth;
+            const y = Math.random() * window.innerHeight;
+            
+            // Random color
+            const colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff'];
+            const color = colors[Math.floor(Math.random() * colors.length)];
+            
+            firework.style.left = x + 'px';
+            firework.style.top = y + 'px';
+            firework.style.backgroundColor = color;
+            
+            // Random movement
+            const tx = (Math.random() - 0.5) * 150;
+            const ty = (Math.random() - 0.5) * 150;
+            firework.style.setProperty('--tx', tx + 'px');
+            firework.style.setProperty('--ty', ty + 'px');
+            
+            fireworksContainer.appendChild(firework);
+            
+            // Remove after animation completes
+            setTimeout(() => {
+                firework.remove();
+            }, 2000);
+        }
+        
+        // Create fireworks periodically
+        setInterval(createFirework, 800);
+        
+        // Add more fireworks on tap/click
+        document.addEventListener('click', function() {
+            for(let i = 0; i < 5; i++) {
+                setTimeout(createFirework, i * 100);
+            }
+        });
+        
+        // Floating Text Animation with 3D effects
+        function startFloatingTexts() {
+            const texts = [
+                { id: 'text1', animation: 'floatText1', duration: '15s' },
+                { id: 'text2', animation: 'floatText2', duration: '18s' },
+                { id: 'text3', animation: 'floatText3', duration: '20s' },
+                { id: 'text4', animation: 'floatText4', duration: '16s' }
+            ];
+            
+            texts.forEach(text => {
+                const element = document.getElementById(text.id);
+                // Set random starting position
+                element.style.left = Math.random() * 70 + 15 + '%';
+                element.style.top = Math.random() * 70 + 15 + '%';
+                
+                // Apply animation
+                element.style.animation = `${text.animation} ${text.duration} infinite`;
+                
+                // Random delay
+                element.style.animationDelay = Math.random() * 5 + 's';
+            });
+        }
+        
+        // Start floating texts after page load
+        window.addEventListener('load', function() {
+            startFloatingTexts();
+        });
+        
+        // Prevent scrolling
+        document.body.addEventListener('touchmove', function(e) {
+            e.preventDefault();
+        }, { passive: false });
+        
+        document.addEventListener('wheel', function(e) {
+            e.preventDefault();
+        }, { passive: false });
+    </script>
+</body>
+</html>
