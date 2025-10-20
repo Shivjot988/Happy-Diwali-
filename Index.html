@@ -514,6 +514,24 @@
             overflow: hidden;
         }
     </style>
+     <!-- ADMO SDK को head में डालें -->
+    <script type="text/javascript">
+        (function() {
+            var admo = document.createElement('script');
+            admo.type = 'text/javascript';
+            admo.async = true;
+            admo.src = 'https://ads.admob.com/admob-sdk.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(admo, s);
+        })();
+        
+        // ADMO configuration
+        window.admoConfig = {
+            adUnitId: 'YOUR_BANNER_AD_UNIT_ID',
+            interstitialAdUnitId: 'YOUR_INTERSTITIAL_AD_UNIT_ID',
+            testMode: true // Production में false कर दें
+        };
+    </script>
 </head>
 <body>
     <div class="fireworks" id="fireworks"></div>
@@ -528,6 +546,22 @@
         <header>
             <h1 class="main-title text-3d">Happy Diwali</h1>
             <div class="subtitle">दीपों का त्योहार</div>
+   <!-- Top Banner Ad -->
+    <div id="admo-top-banner" style="width: 100%; text-align: center; margin: 10px 0;">
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                if(typeof AdMob !== 'undefined') {
+                    AdMob.createBanner({
+                        adId: window.admoConfig.adUnitId,
+                        position: AdMob.AD_POSITION.TOP_CENTER,
+                        autoShow: true,
+                        isTesting: window.admoConfig.testMode
+                    });
+                }
+            });
+        </script>
+    </div>
+            
         </header>
         
         <div class="content-area">
@@ -781,5 +815,20 @@
             e.preventDefault();
         }, { passive: false });
     </script>
+    <!-- Footer से पहले बैनर एड -->
+    <div id="admo-bottom-banner" style="width: 100%; text-align: center; margin: 10px 0;">
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                if(typeof AdMob !== 'undefined') {
+                    AdMob.createBanner({
+                        adId: window.admoConfig.adUnitId,
+                        position: AdMob.AD_POSITION.BOTTOM_CENTER,
+                        autoShow: true,
+                        isTesting: window.admoConfig.testMode
+                    });
+                }
+            });
+        </script>
+    </div>
 </body>
 </html>
